@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm Visualizer - Sorting & Searching</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="app-title">Algorithm Visualizer</h1>
+                <div class="header-controls">
+                    <div class="category-selector">
+                        <button class="btn btn--secondary category-btn active" data-category="sorting">Sorting</button>
+                        <button class="btn btn--secondary category-btn" data-category="searching">Searching</button>
+                    </div>
+                    <div class="language-selector">
+                        <select class="form-control language-select">
+                            <option value="java">Java</option>
+                            <option value="cpp">C++</option>
+                            <option value="python">Python</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Algorithm Selection Panel -->
+            <aside class="algorithm-panel">
+                <h3>Select Algorithm</h3>
+                <div class="algorithm-list">
+                    <!-- Sorting Algorithms -->
+                    <div class="algorithm-category sorting-algorithms active">
+                        <button class="algorithm-btn active" data-algorithm="bubble_sort">Bubble Sort</button>
+                        <button class="algorithm-btn" data-algorithm="selection_sort">Selection Sort</button>
+                        <button class="algorithm-btn" data-algorithm="insertion_sort">Insertion Sort</button>
+                        <button class="algorithm-btn" data-algorithm="merge_sort">Merge Sort</button>
+                        <button class="algorithm-btn" data-algorithm="quick_sort">Quick Sort</button>
+                        <button class="algorithm-btn" data-algorithm="heap_sort">Heap Sort</button>
+                        <button class="algorithm-btn" data-algorithm="counting_sort">Counting Sort</button>
+                        <button class="algorithm-btn" data-algorithm="radix_sort">Radix Sort</button>
+                        <button class="algorithm-btn" data-algorithm="bucket_sort">Bucket Sort</button>
+                    </div>
+                    <!-- Searching Algorithms -->
+                    <div class="algorithm-category searching-algorithms">
+                        <button class="algorithm-btn" data-algorithm="linear_search">Linear Search</button>
+                        <button class="algorithm-btn" data-algorithm="binary_search">Binary Search</button>
+                        <button class="algorithm-btn" data-algorithm="jump_search">Jump Search</button>
+                        <button class="algorithm-btn" data-algorithm="exponential_search">Exponential Search</button>
+                        <button class="algorithm-btn" data-algorithm="interpolation_search">Interpolation Search</button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Visualization Area -->
+            <section class="visualization-section">
+                <div class="visualization-header">
+                    <h2 class="algorithm-title">Bubble Sort</h2>
+                    <div class="array-controls">
+                        <div class="form-group">
+                            <label class="form-label">Array Size:</label>
+                            <input type="range" class="array-size-slider" min="5" max="50" value="20">
+                            <span class="array-size-value">20</span>
+                        </div>
+                        <button class="btn btn--outline generate-array-btn">Generate New Array</button>
+                        <div class="search-input-group" style="display: none;">
+                            <label class="form-label">Search Value:</label>
+                            <input type="number" class="form-control search-value-input" placeholder="Enter value">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visualization Canvas -->
+                <div class="visualization-container">
+                    <div class="array-visualization" id="arrayVisualization"></div>
+                </div>
+
+                <!-- Control Panel -->
+                <div class="control-panel">
+                    <div class="playback-controls">
+                        <button class="btn btn--primary control-btn play-btn">
+                            <span class="play-icon">▶</span>
+                            <span class="pause-icon" style="display: none;">⏸</span>
+                        </button>
+                        <button class="btn btn--secondary control-btn reset-btn">↻</button>
+                        <button class="btn btn--secondary control-btn step-btn">Step</button>
+                    </div>
+                    <div class="speed-control">
+                        <label class="form-label">Speed:</label>
+                        <input type="range" class="speed-slider" min="1" max="10" value="5">
+                        <span class="speed-value">5x</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Code Panel -->
+            <aside class="code-panel">
+                <div class="code-header">
+                    <h3>Implementation</h3>
+                    <div class="algorithm-info">
+                        <div class="complexity-info">
+                            <div class="complexity-item">
+                                <span class="complexity-label">Time Complexity:</span>
+                                <span class="time-complexity">O(n²)</span>
+                            </div>
+                            <div class="complexity-item">
+                                <span class="complexity-label">Space Complexity:</span>
+                                <span class="space-complexity">O(1)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-container">
+                    <pre class="code-display" id="codeDisplay"><code></code></pre>
+                </div>
+                <div class="algorithm-description">
+                    <h4>How it works:</h4>
+                    <p class="description-text">Repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.</p>
+                </div>
+            </aside>
+        </main>
+
+        <!-- Status Bar -->
+        <div class="status-bar">
+            <div class="status-info">
+                <span class="current-step">Step: 0</span>
+                <span class="comparisons">Comparisons: 0</span>
+                <span class="swaps">Swaps: 0</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
