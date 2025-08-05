@@ -4,8 +4,6 @@ A comprehensive, interactive, and language-agnostic visualization tool for learn
 
 ---
 
-## 📁 Project Structure
-
 algorithm-visualizer/
 ├── index.html # Main entry point
 ├── README.md # Project documentation
@@ -38,9 +36,7 @@ algorithm-visualizer/
 │
 ├── tests/ # Unit & integration tests
 ├── build/ # Production-ready build files
-└── .gitignore, LICENSE, etc.
-
----
+└── .gitignore, LICENSE, etc. # Configuration and license
 
 ## 🚀 Features
 
